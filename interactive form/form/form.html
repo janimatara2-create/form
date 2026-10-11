@@ -6,126 +6,178 @@
     <title>Document</title>
 </head>
 <body>
+ <main class="page-shell">
+    <section class="registration-card" aria-labelledby="page-title">
+      <header class="form-header">
+        <div class="brand-mark" aria-hidden="true">JF</div>
+        <p class="eyebrow">CAREERS • CONNECTIONS • OPPORTUNITY</p>
+        <h1 id="page-title">Job Fair <span>2026</span></h1>
+        <p class="subtitle">Register now and connect with top employers.</p>
+      </header>
 
-    <div class="container">
-        <div class="form-header" >
-        <h6 style="font-size: larger; font-weight: bolder; text-align: center; font-family: Arial, Helvetica, sans-serif;">Job Fair 2026</h6>
-<p style="text-align: center; ">Register now and connect with top employees</p>
-
-</div>
-        <!-- Progress Bar -->
-        <div class="progress-container">
-
-            <div class="progress-line">
-                <div class="progress"></div>
-            </div>
-
-            <div class="step active">
-                <span>1</span>
-                <small>Personal</small>
-            </div>
-
-            <div class="step">
-                <span>2</span>
-                <small>Professional</small>
-            </div>
-
-            <div class="step">
-                <span>3</span>
-                <small>Confirmation</small>
-            </div>
-
+      <div class="progress-area" aria-label="Registration progress">
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="steps">
+          <div class="step active" data-step="0">
+            <span class="step-number">1</span><span class="step-label">Personal</span>
+          </div>
+          <div class="step" data-step="1">
+            <span class="step-number">2</span><span class="step-label">Professional</span>
+          </div>
+          <div class="step" data-step="2">
+            <span class="step-number">3</span><span class="step-label">Confirmation</span>
+          </div>
         </div>
+      </div>
 
-        <!-- Feedback Message -->
-        <div id="message"></div>
-        
-    <form action="" id="job form" style=" text-align: center;">
-        <!-- Step1 -->
-         <label for="First name" style="font-family: Arial, Helvetica, sans-serif;">First name</label>
-         <input type="text" placeholder="Enter your first name" style="border: solid 1px grey; margin: 20px; padding: 10px; padding-left: 20px; border-radius: 7px;">
-         <br>
-          <label for="Last name" style="font-family: Arial, Helvetica, sans-serif;">Last name</label>
-         <input type="text" placeholder="Enter your last name" style="border: solid 1px grey; margin: 20px; padding: 10px; padding-left: 20px; border-radius: 7px;">
-         <br>
+      <div id="message" class="message" role="status" aria-live="polite" hidden></div>
 
+      <form id="jobForm" novalidate>
+        <section class="form-step active" data-panel="0">
+          <div class="section-heading">
+            <p class="step-kicker">STEP 1 OF 3</p>
+            <h2>Personal information</h2>
+            <p>Tell us a little about yourself.</p>
+          </div>
 
-        <label for="Last name" style="font-family: Arial, Helvetica, sans-serif;">Age</label>
-         <input type="text" placeholder="Enter your age" style="border: solid 1px grey; margin: 20px; padding: 10px; padding-left: 20px; border-radius: 7px;">
-         <br>
+          <div class="form-grid">
+            <div class="field">
+              <label for="firstName">First name <span>*</span></label>
+              <input id="firstName" name="firstName" type="text" autocomplete="given-name" placeholder="e.g. John" required>
+              <small class="field-error"></small>
+            </div>
+            <div class="field">
+              <label for="lastName">Last name <span>*</span></label>
+              <input id="lastName" name="lastName" type="text" autocomplete="family-name" placeholder="e.g. Doe" required>
+              <small class="field-error"></small>
+            </div>
+            <div class="field">
+              <label for="age">Age <span>*</span></label>
+              <input id="age" name="age" type="number" min="16" max="100" inputmode="numeric" placeholder="Your age" required>
+              <small class="field-error"></small>
+            </div>
+            <div class="field">
+              <label for="dob">Date of birth <span>*</span></label>
+              <input id="dob" name="dob" type="date" required>
+              <small class="field-error"></small>
+            </div>
+            <div class="field">
+              <label for="email">Email address <span>*</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+              <small class="field-error"></small>
+            </div>
+            <div class="field">
+              <label for="phone">Phone number <span>*</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 800 000 0000" required>
+              <small class="field-error"></small>
+            </div>
+            <div class="field field-full">
+              <label for="location">Location <span>*</span></label>
+              <select id="location" name="location" required>
+                <option value="">Select your location</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="United States">United States</option>
+                <option value="Puerto Rico">Puerto Rico</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Other">Other</option>
+              </select>
+              <small class="field-error"></small>
+            </div>
+          </div>
 
+          <div class="button-row button-row-end">
+            <button class="btn btn-primary" type="button" data-next="0">Continue <span aria-hidden="true">→</span></button>
+          </div>
+        </section>
 
+        <section class="form-step" data-panel="1" hidden>
+          <div class="section-heading">
+            <p class="step-kicker">STEP 2 OF 3</p>
+            <h2>Professional information</h2>
+            <p>Help employers understand your background and goals.</p>
+          </div>
 
-        <label for="Last name" style="font-family: Arial, Helvetica, sans-serif;">Date of Birth</label>
-         <input type="text" placeholder="10/6/2026" style="border: solid 1px grey; margin: 20px; padding: 10px; padding-left: 20px; border-radius: 7px;">
-         <br>
+          <div class="form-grid">
+            <div class="field field-full">
+              <label for="qualification">Highest qualification <span>*</span></label>
+              <select id="qualification" name="qualification" required>
+                <option value="">Select your qualification</option>
+                <option>Secondary school certificate (SSCE)</option>
+                <option>OND</option>
+                <option>HND</option>
+                <option>Bachelor's degree</option>
+                <option>Master's degree</option>
+                <option>PhD</option>
+                <option>Professional certification</option>
+                <option>Other</option>
+              </select>
+              <small class="field-error"></small>
+            </div>
+            <div class="field field-full">
+              <label for="fieldOfStudy">Field of study <span>*</span></label>
+              <input id="fieldOfStudy" name="fieldOfStudy" type="text" placeholder="e.g. Computer Science" required>
+              <small class="field-error"></small>
+            </div>
+            <div class="field">
+              <label for="experience">Years of experience <span>*</span></label>
+              <select id="experience" name="experience" required>
+                <option value="">Select experience</option>
+                <option value="No experience">No experience</option>
+                <option value="Less than 1 year">Less than 1 year</option>
+                <option value="1 year">1 year</option>
+                <option value="2 years">2 years</option>
+                <option value="3 years">3 years</option>
+                <option value="4+ years">4+ years</option>
+              </select>
+              <small class="field-error"></small>
+            </div>
+            <div class="field">
+              <label for="jobRole">Preferred job role <span>*</span></label>
+              <input id="jobRole" name="jobRole" type="text" placeholder="e.g. Frontend Developer" required>
+              <small class="field-error"></small>
+            </div>
+            <fieldset class="field field-full radio-field">
+              <legend>Employment type <span>*</span></legend>
+              <div class="radio-options">
+                <label class="radio-card"><input type="radio" name="employmentType" value="Full-time" required><span>Full-time</span></label>
+                <label class="radio-card"><input type="radio" name="employmentType" value="Part-time"><span>Part-time</span></label>
+                <label class="radio-card"><input type="radio" name="employmentType" value="Internship"><span>Internship</span></label>
+                <label class="radio-card"><input type="radio" name="employmentType" value="Contract"><span>Contract</span></label>
+              </div>
+              <small class="field-error" id="employmentError"></small>
+            </fieldset>
+          </div>
 
+          <div class="button-row">
+            <button class="btn btn-secondary" type="button" data-back="1">← Back</button>
+            <button class="btn btn-primary" type="button" data-next="1">Review details <span aria-hidden="true">→</span></button>
+          </div>
+        </section>
 
+        <section class="form-step" data-panel="2" hidden>
+          <div class="section-heading">
+            <p class="step-kicker">STEP 3 OF 3</p>
+            <h2>Review and confirm</h2>
+            <p>Check your details before completing your registration.</p>
+          </div>
+          <div id="review" class="review-list"></div>
+          <p class="privacy-note">Please check that your information is correct. This demo does not send or store your details on a server.</p>
+          <div class="button-row">
+            <button class="btn btn-secondary" type="button" data-back="2">← Edit details</button>
+            <button class="btn btn-primary" type="submit">Complete registration <span aria-hidden="true">✓</span></button>
+          </div>
+        </section>
 
-
-          <label for="Email Address" style="font-family: Arial, Helvetica, sans-serif;">Email Address</label>
-         <input type="text" placeholder="example@gmail.com" style="border: solid 1px grey; margin: 20px; padding: 10px; padding-left: 20px; border-radius:7px;">
-         <br>
-
-          <label for="Phone number" style="font-family: Arial, Helvetica, sans-serif;">Phone number</label>
-         <input type="text" placeholder="12345678" style="border: solid 1px grey; margin: 20px; padding: 10px; padding-left: 20px; border-radius:7px;">
-         <br>
-
-
-         <label for="location" style="font-family: Arial, Helvetica, sans-serif;">Location</label>
-
-<select name="location" id="location" style="border: solid 1px grey; margin: 20px; padding: 10px; padding-left: 20px; border-radius: 7px;">
-  <option value="">Select your location</option>
-  <option value="US">US</option>
-  <option value="Puerto Rico">Puerto Rico</option>
-  <option value="Mexico">Mexico</option>
-</select>
- <button>Next</button>
-    </form>
-
-   <!-- Next step -->
-     <form action="" id="job form" style=" text-align: center;">
-        <!-- Step1 -->
-         <label for="Highest Qualification" style="font-family: Arial, Helvetica, sans-serif;">Highest Qualification</label>
-        <select name="Highest Qualification" id="Highest Qualification" style="border: solid 1px grey; margin: 20px; padding: 10px; padding-left: 20px; border-radius: 7px;">
-  <option value="">Select Qualification</option>
-  <option value="US">US</option>
-  <option value="Puerto Rico">Puerto Rico</option>
-  <option value="Mexico">Mexico</option>
-</select>
-         <br>
-          <label for="Field of Study" style="font-family: Arial, Helvetica, sans-serif;">Field of Study</label>
-         <input type="text" placeholder="e.g Computer Science" style="border: solid 1px grey; margin: 20px; padding: 10px; padding-left: 20px; border-radius: 7px;">
-         <br>
-
-          <label for="Email Address" style="font-family: Arial, Helvetica, sans-serif;">Email Address</label>
-         <input type="text" placeholder="example@gmail.com" style="border: solid 1px grey; margin: 20px; padding: 10px; padding-left: 20px; border-radius:7px;">
-         <br>
-
-          <label for="Years of Experience" style="font-family: Arial, Helvetica, sans-serif;">Years of Experience</label>
-        <select name="Years of Experience" id="Years of Experience" style="border: solid 1px grey; margin: 20px; padding: 10px; padding-left: 20px; border-radius: 7px;">
-  <option value="">Select Experience</option>
-  <option value="US">1 year</option>
-  <option value="Puerto Rico">2 years</option>
-  <option value="Mexico">3 years</option>
-</select>
-
-
-         <label for="Preferred Job role" style="font-family: Arial, Helvetica, sans-serif;">Preferred Job role</label>
-<input type="text" placeholder="e.g. Frontend Developer">
-
-
-<p>Employment Type</p>
-  <input type="radio" id="html" name="fav_language" value="HTML">
-  <label for="Full-time">Full-time</label><br>
-
-  <input type="radio" id="css" name="fav_language" value="CSS">
-  <label for="Part-time">Part-time</label><br>
-
-  <input type="radio" id="javascript" name="fav_language">
-  <label for="Internship">Internship</label><br>
- <button>Next</button>
-    </form>
-</div>
+        <section class="form-step success-panel" data-panel="3" hidden>
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <p class="step-kicker">REGISTRATION COMPLETE</p>
+          <h2>Thank you, <span id="successName">there</span>!</h2>
+          <p>Your information passed the form checks. This is a front-end demonstration, so your registration has not been sent to an event organizer or saved to a database.</p>
+          <button class="btn btn-secondary" type="button" id="startAgain">Start a new registration</button>
+        </section>
+      </form>
+      <footer class="form-footer">Job Fair 2026 <span>•</span> Your next opportunity starts here.</footer>
+    </section>
+  </main>
 </body>
 </html>

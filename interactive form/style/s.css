@@ -1,0 +1,259 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+margin: 0;
+min-height: 100vh;
+background: radial-gradient(circle 10% 10%,);
+color: var(--navy);
+font-family: 'DM Sans', Arial, sans- serif;
+padding: 38px 16px;
+}
+
+button, input, select {
+    font: inherit; 
+} 
+
+.page-shell {
+    width: 100%;
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.registration-card{
+background: var(--white);
+border: 1px solid rgba(220, 227, 241, .9);
+border-radius: 24px;
+box-shadow: 0 24px 70px rgba(28, 48, 93, .10);
+padding: 38px 48px 24px;
+}
+
+.form-header{
+    text-align: center;
+}
+
+.brand-mark{
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 15px;
+    border-radius: 15px;
+    color: white;
+    background: linear-gradient(135deg, #3157d5);
+    font-family: 'Manrope', sans-serif;
+    font-weight:800 ;
+    letter-spacing: -1px;
+}
+
+
+.eyebrow, .step-kicker{
+    margin: 0 0 8px;
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+
+}
+
+h1, h2, h3{
+    font-family: 'Manrope', sans-serif;
+
+}
+
+h1{
+    margin: 0;
+    font-size: clamp(29px, 5vw, 38px);
+    letter-spacing: -1.5px;
+}
+
+h1 span{
+    color: van(--blue);
+}
+
+.subtitle{
+    color: var(--muted);
+    margin: 10px 0 0;
+    font-size: 14px;
+}
+
+.progress-area{
+    margin:36px 0 35px ;
+    position: relative;
+}
+
+.progress-track {
+    position: absolute;
+    top: 16px;
+    left: 16.5%;
+    right: 16.5%;
+    height: 3px;
+    background: #e8ecf5;
+}
+
+.progress-fill{
+    width: 0;
+    height: 100%;
+    background: var(--blue);
+    transition: width .25s ease;
+}
+
+.steps{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.step{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 33.333%;
+    color: #9aa4b7;
+}
+
+.step-number{
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #e8ecf5;
+    color: #e8ecf5;
+
+    border: 3px solid white;
+    box-shadow: 0 0 0 1px #e8ecf5;
+    font-size: 17px;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.step-label{
+    font-size: 11px;
+    font-weight: 700;
+
+}
+
+.step.active, .step.completed {
+    color: var(--blue);
+}
+
+.step.active .step-number, .step.completed .step-number{
+    background: var(--blue);
+    color: white;
+    box-shadow: 0 0 0 1px var(--blue);
+}
+
+.section-heading{
+    margin-bottom: 24px;
+}
+
+.section-heading h2 .success-panel h2 {
+    margin: 0 0 7px;
+    font-size: 21px;
+    letter-spacing: 7px;
+}
+
+.form-grid{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap:19px 16px ;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.field-full{
+grid-column: 1/-1;
+}
+
+.field label, .radio-field legend{
+    font-size: 12px;
+    font-weight: 700;
+    color: #9aa4b7;
+    margin-bottom: 8px;
+}
+
+.field label span, .radio-field legend span{
+   border-color: var(--danger);
+
+}
+
+.field-error {
+    min-height: 0;
+    margin-top: 5px;
+    color: var(--danger);
+    font-size: 11px;
+}
+
+.field-error:empty {
+    display: none;
+
+}
+
+.radio-field{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.radio-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 9px;
+}
+
+.radio-card{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 12px 10px;  border: 1px solid var(--line);
+    border-radius: 9px; cursor: pointer; font-size: 12px !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+}
+
+.radio-card:has(input:checked){ border-color: var(--blue); background:#f2f5ff ; color: var(--blue); } 
+.radio-card input {
+    accent-color: var(--blue);
+    margin: 0;
+}
+.button-row {
+    display: flex; justify-content: space-between; gap: 12px; margin-top: 30px;
+}
+
+.button-row-end { justify-content: flex-end; }
+
+.btn {
+    border: 0; border-radius: 9px; min-height: 45px; padding: 0 10px;
+    font-weight: 700; font-size: 13px; cursor: pointer;
+    transition: transform .15s, background .15s, box-shadow .15s ;
+}
+
+.btn:active { transform: translateY(1px);}
+.btn-primary {background: var(--blue); color: white; box-shadow: 0 7px 15px rgba(49, 87, 213, .17);}
+.btn-primary:hover {background: var(--blue-var); }
+.btn-secondary {background: #f0f3f9; color: #34415b;}
+.btn-secondary:hover {background: #e8ecf5;}
+.form-step[hidden] {display: none !important;}
+.message {padding: 12px 14px; margin: -14px 0 22px; border-radius: 8px; font-size: 12px; }
+.message.error {display: block; color: #a52626; background: #fff0f0; border: 1px solid #ffd9d9;}
+.message.success {display: block; color: var(--success); background: #ecf9f2; border: 1px solid #cdeedd;}
+.review-list{border: 1px solid var(--line); border-radius: 12px; overflow: hidden}
+.review-group-title {margin: 0; padding: 13px 16px ; background: #f7f8fc; font-size: 12px; font-weight: 800; }
+.btn:active {transform: translateY(1px);}
+.btn-primary{background: var(--blue); color: white; box-shadow: 0 7px 15px rgba(49, 87, 213, .17);}
+.btn-primary:hover {background: var(--blue-dark);}
+.btn-secondary{background: #f0f3f9; color: #34415b;}
+.btn-secondary:hover{background: #e6ebf5;}
+.form-step[hidden]{display: none !important;}
+.message{padding: 12px 14px; margin: -14px 0 22px; border-radius: 8px; font-size: 12px;}
+.message.error{ display: block ; color: #a52626; background: #e8ecf5; border: 1px solid #cdeedd;}
+.message.success {display: block; color: var(--success); background: #f7f8fc; border: 1px solid #cdeedd;}
+.review-list{ border: 1px solid var(--line); border-radius: 12px; overflow: hidden;}
+.review-group-title {margin: 0 ; padding: 13px 16px ; background: #f7f8fc; font-size: 12px; font-weight: 800;}

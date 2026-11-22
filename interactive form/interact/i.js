@@ -50,6 +50,7 @@ function showStep(stepIndex) {
   if (heading) heading.setAttribute('tabindex', '-1'), heading.focus({ preventScroll: true });
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
 function setFieldError(field, text) {
   field.classList.toggle('invalid', Boolean(text));
   const error = field.closest('.field')?.querySelector('.field-error');

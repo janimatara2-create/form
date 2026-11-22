@@ -226,13 +226,13 @@ h1 span {
 .btn {
   border: 0; border-radius: 9px; min-height: 45px; padding: 0 19px;
   font-weight: 700; font-size: 13px; cursor: pointer;
-  transition: transform .15s, background .15s, box-shadow .15s;
+  transition: transform .15s, .15s, box-shadow .15s;
 }
-.btn:active { transform: translateY(1px); }
-.btn-primary { background: var(--blue); color: white; box-shadow: 0 7px 15px rgba(49, 87, 213, .17); }
+ .btn:active { transform: translateY(1px); }
+/* .btn-primary { background: var(--blue); color: white; box-shadow: 0 7px 15px rgba(49, 87, 213, .17); } */
 .btn-primary:hover { background: var(--blue-dark); }
-.btn-secondary { background: #f0f3f9; color: #34415b; }
-.btn-secondary:hover { background: #e6ebf5; }
+/* .btn-secondary { background: #f0f3f9; color: #34415b; } */
+/* .btn-secondary:hover { background: #e6ebf5; }  */
 .form-step[hidden] { display: none !important; }
 .message { padding: 12px 14px; margin: -14px 0 22px; border-radius: 8px; font-size: 12px; }
 .message.error { display: block; color: #a52626; background: #fff0f0; border: 1px solid #ffd9d9; }
@@ -247,7 +247,7 @@ h1 span {
 .success-icon { display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 20px; background: #e4f7ed; color: var(--success); font-size: 28px; font-weight: 800; }
 .success-panel > p:not(.step-kicker) { max-width: 480px; margin: 12px auto 22px; color: var(--muted); font-size: 13px; line-height: 1.7; }
 .form-footer { border-top: 1px solid #edf0f6; margin-top: 32px; padding-top: 19px; text-align: center; color: #8994a8; font-size: 11px; }
-.form-footer span { padding: 0 5px; color: var(--blue); }
+.form-footer span { padding: 0 5px; color: var(--blue); } 
 
 @media (max-width: 600px) {
   body { padding: 14px 10px; }

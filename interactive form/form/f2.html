@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/s.css">
+    <title>Document</title>
+</head>
+<body>
+     <section class="form-step" data-panel="1" hidden>
+          <div class="section-heading">
+            <p class="step-kicker">STEP 2 OF 3</p>
+            <h2>Professional information</h2>
+            <p>Help employers understand your background and goals.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field field-full">
+              <label for="qualification">Highest qualification <span>*</span></label>
+              <select id="qualification" name="qualification" required>
+                <option value="">Select your qualification</option>
+                <option>Secondary school certificate (SSCE)</option>
+                <option>OND</option>
+                <option>HND</option>
+                <option>Bachelor's degree</option>
+                <option>Master's degree</option>
+                <option>PhD</option>
+                <option>Professional certification</option>
+                <option>Other</option>
+              </select>
+              <small class="field-error"></small>
+            </div>
+            <div class="field field-full">
+              <label for="fieldOfStudy">Field of study <span>*</span></label>
+              <input id="fieldOfStudy" name="fieldOfStudy" type="text" placeholder="e.g. Computer Science" required>
+              <small class="field-error"></small> 
+          </div>
+            <div class="field">
+              <label for="experience">Years of experience <span>*</span></label>
+              <select id="experience" name="experience" required>
+                <option value="">Select experience</option>
+                <option value="No experience">No experience</option>
+                <option value="Less than 1 year">Less than 1 year</option>
+                <option value="1 year">1 year</option>
+                <option value="2 years">2 years</option>
+                <option value="3 years">3 years</option>
+                <option value="4+ years">4+ years</option>
+              </select>
+              <small class="field-error"></small>
+            </div>
+            <div class="field">
+              <label for="jobRole">Preferred job role <span>*</span></label>
+              <input id="jobRole" name="jobRole" type="text" placeholder="e.g. Frontend Developer" required>
+              <small class="field-error"></small>
+            </div>
+            <fieldset class="field field-full radio-field">
+              <legend>Employment type <span>*</span></legend>
+              <div class="radio-options">
+                <label class="radio-card"><input type="radio" name="employmentType" value="Full-time" required><span>Full-time</span></label>
+                <label class="radio-card"><input type="radio" name="employmentType" value="Part-time"><span>Part-time</span></label>
+                <label class="radio-card"><input type="radio" name="employmentType" value="Internship"><span>Internship</span></label>
+                <label class="radio-card"><input type="radio" name="employmentType" value="Contract"><span>Contract</span></label>
+              </div>
+              <small class="field-error" id="employmentError"></small>
+            </fieldset>
+          </div>
+
+          <div class="button-row">
+            <button class="btn btn-secondary" type="button" data-back="1">← Back</button>
+            <button class="btn btn-primary" type="button" data-next="1">Review details <span aria-hidden="true">→</span></button>
+          </div>
+        </section> 
+
+</body>
+<script src="../style/s.css"></script>
+</html>
